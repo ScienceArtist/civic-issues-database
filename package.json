@@ -1,1 +1,31 @@
-{"name":"civic-issues-database","version":"1.0.0","description":"GitHub Issues database for civic reports","main":"scripts/analytics.js","scripts":{"analytics":"node scripts/analytics.js"},"dependencies":{"@octokit/rest":"^20.0.0"}}
+{
+  "name": "civic-issues-database",
+  "version": "1.0.0",
+  "description": "GitHub Issues database for civic reports",
+  "main": "scripts/analytics.js",
+  "scripts": {
+    "analytics": "node scripts/analytics.js",
+    "summary": "node scripts/create-summary.js",
+    "comment": "node scripts/comment-analytics.js",
+    "test": "node scripts/test-workflow.js",
+    "test-workflow": "node scripts/test-workflow.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ScienceArtist/civic-issues-database.git"
+  },
+  "keywords": [
+    "civic",
+    "issues",
+    "analytics",
+    "github-actions"
+  ],
+  "author": "ScienceArtist",
+  "license": "MIT"
+}

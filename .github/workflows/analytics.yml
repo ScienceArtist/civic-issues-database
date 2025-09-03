@@ -8,6 +8,12 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch: # Allow manual trigger
 
+# Fix for 403 permission error - explicit permissions needed
+permissions:
+  contents: write      # Allow writing to repository
+  issues: write        # Allow commenting on issues
+  pull-requests: write # Allow creating PRs if needed
+
 jobs:
   analytics:
     runs-on: ubuntu-latest
@@ -15,11 +21,17 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        # Use token with write permissions
+        token: ${{ secrets.GITHUB_TOKEN }}
+        # Fetch full history for proper git operations
+        fetch-depth: 0
       
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
         
     - name: Install dependencies
       run: npm install
@@ -29,17 +41,19 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Commit analytics results
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add analytics/
-        git commit -m "Update analytics data" || exit 0
-        git push
-        
     - name: Create analytics summary
       run: node scripts/create-summary.js
       
     - name: Comment on issues with analytics
       if: github.event_name == 'issues'
       run: node scripts/comment-analytics.js ${{ github.event.issue.number }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Commit and push analytics results
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add analytics/
+        git diff --quiet && git diff --staged --quiet || git commit -m "🤖 Update analytics data - $(date -u +'%Y-%m-%d %H:%M UTC')"
+        git push origin HEAD:${{ github.ref }}
