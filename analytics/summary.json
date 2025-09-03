@@ -1,0 +1,29 @@
+{
+  "totalReports": 1,
+  "openReports": 1,
+  "closedReports": 0,
+  "issueTypes": {},
+  "locations": {},
+  "dailyActivity": {
+    "2025-09-03": 1
+  },
+  "userActivity": {
+    "ScienceArtist": 1
+  },
+  "recentActivity": [
+    {
+      "id": 1,
+      "date": "2025-09-03T14:51:04Z",
+      "user": "ScienceArtist"
+    }
+  ],
+  "generatedAt": "2025-09-03T15:08:32.518Z",
+  "topIssueTypes": [],
+  "topLocations": [],
+  "topUsers": [
+    [
+      "ScienceArtist",
+      1
+    ]
+  ]
+}
