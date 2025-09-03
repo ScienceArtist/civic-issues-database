@@ -1,0 +1,1 @@
+{"name":"civic-issues-database","version":"1.0.0","description":"GitHub Issues database for civic reports","main":"scripts/analytics.js","scripts":{"analytics":"node scripts/analytics.js"},"dependencies":{"@octokit/rest":"^20.0.0"}}
