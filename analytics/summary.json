@@ -1,6 +1,6 @@
 {
-  "totalReports": 72,
-  "openReports": 72,
+  "totalReports": 73,
+  "openReports": 73,
   "closedReports": 0,
   "issueTypes": {
     "Pothole": 1
@@ -9,13 +9,18 @@
     "Greater Noida, Uttar Pradesh": 1
   },
   "dailyActivity": {
-    "2025-09-04": 1,
+    "2025-09-04": 2,
     "2025-09-03": 71
   },
   "userActivity": {
-    "ScienceArtist": 72
+    "ScienceArtist": 73
   },
   "recentActivity": [
+    {
+      "id": 73,
+      "date": "2025-09-04T01:29:45Z",
+      "user": "ScienceArtist"
+    },
     {
       "id": 72,
       "date": "2025-09-04T00:47:44Z",
@@ -260,14 +265,9 @@
       "id": 24,
       "date": "2025-09-03T16:51:32Z",
       "user": "ScienceArtist"
-    },
-    {
-      "id": 23,
-      "date": "2025-09-03T16:41:30Z",
-      "user": "ScienceArtist"
     }
   ],
-  "generatedAt": "2025-09-04T00:51:01.490Z",
+  "generatedAt": "2025-09-04T01:30:01.488Z",
   "topIssueTypes": [
     [
       "Pothole",
@@ -283,7 +283,7 @@
   "topUsers": [
     [
       "ScienceArtist",
-      72
+      73
     ]
   ]
 }
