@@ -1,6 +1,6 @@
 #  Civic Issues Analytics Summary
 
-**Generated:** 11/1/2026, 6:17:22 pm
+**Generated:** 12/1/2026, 1:04:25 am
 
 ##  Overview
 - **Total Reports:** 159
